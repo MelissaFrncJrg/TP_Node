@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+    form(action="/students" method="POST")
+    ul.student-list
+        each student, index in students
+            li
+                .student-item
+                    span #{student.name} #{formatBirthdate(student.birth)}
+                    a(href=`/students/delete/${student.name}`) X
